@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
-  get 'users/new'
-  
-  get 'pages/index'
-  root 'pages#index'
+  get 'users/new', to: 'users#new'
   
   root 'pages#index'
-  get 'pages/help'
+  get 'pages/help', to: 'pages#help'
   
   resources :users
 end
