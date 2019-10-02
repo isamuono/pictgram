@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
   end
   
   def create
-    #binding.pry
     user = User.find_by(email: session_params[:email])
     if user && user.authenticate(session_params[:password])
       log_in user
@@ -25,6 +24,7 @@ class SessionsController < ApplicationController
     end
   
     def log_out
+      #Railsに事前定義されているsession.deleteメソッドでSessionを削除
       session.delete(:user_id)
       @current_user = nil
     end

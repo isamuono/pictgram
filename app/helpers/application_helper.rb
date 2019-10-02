@@ -1,5 +1,3 @@
 module ApplicationHelper
-  
-  include CommonActions
-  
+  #include CommonActions
 end
