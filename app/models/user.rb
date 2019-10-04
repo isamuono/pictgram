@@ -11,6 +11,8 @@ class User < ApplicationRecord
   validates :password, format: {with: PW_REGEX}
   
   has_many :topics
+  #depedentオプション==>親にあたる投稿が削除されたら（=topic::destroy()が呼ばれたら）、
+  #子にあたるコメントを削除する。
   has_many :favorites, dependent: :destroy
   has_many :favorite_topics, through: :favorites, source: 'topic'
   

@@ -12,12 +12,4 @@ class Topic < ApplicationRecord
   
   has_many :comments
   
-  def fav(user)
-    favorites.create(user_id: user.id)
-  end
-  
-  #いいねを解除する
-  def unfav(user)
-    favorites.find_by(user_id: user.id).destroy
-  end
 end

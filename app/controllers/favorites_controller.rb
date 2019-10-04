@@ -7,8 +7,6 @@ class FavoritesController < ApplicationController
     favorite = Favorite.new
     favorite.user_id = current_user.id
     favorite.topic_id = params[:topic_id]
-    #@topic = Topic.find(params[:topic_id])
-    #@topic.fav(current_user)
     
     if favorite.save
       redirect_to topics_path, success: 'お気に入りに登録しました'

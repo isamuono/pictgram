@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :topics
   
   get 'favorites/index'
-  #post '/favorites', to: 'favorites#create'
+  post '/favorites', to: 'favorites#create'
   resources :favorites, only: [:create, :destroy]
   
   get 'comments/index'
